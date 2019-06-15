@@ -8,6 +8,10 @@
     <select id="getData" resultType="com.sunhao.stockprojecteg.model.BaseStockData">
         select * from basedata
     </select>
-
-
+    <!--[{"amplitude":"1","closePrice":"1.0","data":"1","highPrice":"1.0","lowPrice":"1.0","openPrice":"1.0","risePrice":"1.0","uuid":"1","volume":"1"}]-->
+    <update id="saveDateByNet">
+        INSERT INTO basedata ( amplitude, closePrice,data ,highPrice,lowPrice,openPrice,risePrice,uuid,volume)
+        VALUES
+            ( 3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0);
+    </update>
 </mapper>

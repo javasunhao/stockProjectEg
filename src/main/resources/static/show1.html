@@ -12,8 +12,10 @@
     <script type="text/javascript" src="js/jquery-3.4.1.js.js"></script>
     <script >
         $(document).ready(function(){
+            var params = {};
+            params.stockCode = $("#stockCode").val()
             $("#updateData").click(function(){
-                $.get("/baseData/getDate",function(data,status){
+                $.get("/baseData/saveDateByNet",params,function(data,status){
                     alert("数据: " + data + "\n状态: " + status);
                 });
             });

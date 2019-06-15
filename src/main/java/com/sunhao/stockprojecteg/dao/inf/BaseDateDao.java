@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface BaseDateDao {
     List<BaseStockData> getData();
+
+    void saveDateByNet(List<BaseStockData> stockDataList);
 }

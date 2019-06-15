@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.sunhao.stockprojecteg.bussiess.inf.BaseDataBussiess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -14,8 +15,14 @@ public class BaseServiceImpl {
     private BaseDataBussiess baseDataBussiess;
 
     @RequestMapping("/getDate")
-    public String getBaseDate(){
+    public String getBaseDate() {
         return JSON.toJSONString(baseDataBussiess.getData());
+    }
+
+    @RequestMapping("/saveDateByNet")
+    public String saveDateByNet(@RequestParam("stockCode") String stockCode) {
+        baseDataBussiess.saveDateByNet(stockCode);
+        return "saveDateByNet is ok";
     }
 
 }

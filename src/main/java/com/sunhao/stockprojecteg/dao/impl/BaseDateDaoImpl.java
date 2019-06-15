@@ -3,6 +3,7 @@ package com.sunhao.stockprojecteg.dao.impl;
 import com.sunhao.stockprojecteg.dao.inf.BaseDateDao;
 import com.sunhao.stockprojecteg.dao.mapper.BaseDataMapper;
 import com.sunhao.stockprojecteg.model.BaseStockData;
+import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,5 +19,10 @@ public class BaseDateDaoImpl implements BaseDateDao {
     @Override
     public List<BaseStockData> getData() {
         return baseDataMapper.getData();
+    }
+
+    @Override
+    public void saveDateByNet(List<BaseStockData> stockDataList) {
+        baseDataMapper.saveDateByNet(stockDataList);
     }
 }
