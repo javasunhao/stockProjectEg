@@ -8,7 +8,7 @@ spring:
    username: root
    password: root
  thymeleaf:
-   prefix: classpath:/templates/
+   prefix: classpath:/static/
 
 mybatis:
   typeAliasesPackage: com.sunhao.stockprojecteg.model
