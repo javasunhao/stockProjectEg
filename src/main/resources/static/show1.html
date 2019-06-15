@@ -3,41 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>echartsTest</title>
+    <!-- 引入 测试用css -->
+    <link rel="stylesheet" type="text/css" href="css/test1.css"/>
     <!-- 引入 echarts.js -->
-    <script type="text/javascript" src="echarts-all.js"></script>
+    <script type="text/javascript" src="js/echarts-all.js"></script>
+
+    <!-- 引入 jquery.js -->
+    <script type="text/javascript" src="js/jquery-3.4.1.js.js"></script>
+    <script >
+        $(document).ready(function(){
+            $("#updateData").click(function(){
+                $.get("/baseData/getDate",function(data,status){
+                    alert("数据: " + data + "\n状态: " + status);
+                });
+            });
+        });
+    </script>
 </head>
 <body>
-<!-- 为ECharts准备一个具备大小（宽高）的dom -->
-<div id="main" style="width: 600px;height:400px;"></div>
-<script type="text/javascript">
-    // 基于准备好的dom，初始化echarts实例
-    var myChart = echarts.init(document.getElementById('main'));
-    var json = [
-        {value:30,name:'高圆圆'},
-        {value:26,name:'赵丽颖'},
-        {value:24,name:'关晓彤'}
-    ];
+    <!-- 为ECharts准备一个具备大小（宽高）的dom -->
+    <div id="test1"></div>
+    <div id="test2" class="css1">
+        <table class="select">
+            <tr>
+                <td class="td">股票代码<input type="text" id="stockCode" name="stockCode" class="input"></td>
+                <td class="td"> <button id="updateData">更新数据库数据</button></td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('test1'));
+        var json = [
+            {value: 30, name: '高圆圆'},
+            {value: 26, name: '赵丽颖'},
+            {value: 24, name: '关晓彤'}
+        ];
 
-    // 指定图表的配置项和数据
-    var option = {
-        title: {
-            text: 'ECharts 入门示例'
-        },
-        tooltip: {},
-        legend: {
-            data:['高圆圆','赵丽颖','关晓彤']
-        },
-        series: [{
-            name: '女神',
-            type: 'pie',
-            radius: '55%', //饼形图半径大小
-            data:json
-        }]
-    };
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data: ['高圆圆', '赵丽颖', '关晓彤']
+            },
+            series: [{
+                name: '女神',
+                type: 'pie',
+                radius: '55%', //饼形图半径大小
+                data: json
+            }]
+        };
 
-    // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
-</script>
-
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
 </body>
 </html>

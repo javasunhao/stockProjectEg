@@ -1,0 +1,18 @@
+#test1{
+    width: 600px;
+    height: 400px;
+    background: gray;
+    border: 1px solid black;
+    position: absolute;
+    left: 50%;
+    margin: 0 0 0 -300px;
+}
+.css1{
+    width: 600px;
+    height: 400px;
+    background: gray;
+    border: 1px solid black;
+    position: absolute;
+    left: 50%;
+    margin: 400px 0 0 -300px;
+}
