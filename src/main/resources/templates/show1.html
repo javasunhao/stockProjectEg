@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>echartsTest</title>
+    <!-- 引入 echarts.js -->
+    <script type="text/javascript" src="../static/echarts-all.js"></script>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的dom -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+    var json = [
+        {value:30,name:'高圆圆'},
+        {value:26,name:'赵丽颖'},
+        {value:24,name:'关晓彤'}
+    ];
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+            data:['高圆圆','赵丽颖','关晓彤']
+        },
+        series: [{
+            name: '女神',
+            type: 'pie',
+            radius: '55%', //饼形图半径大小
+            data:json
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+</body>
+</html>
