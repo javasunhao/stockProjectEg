@@ -22,8 +22,16 @@ public class BaseDataBussiessImpl implements BaseDataBussiess {
 
     @Override
     public void saveDateByNet(String stockCode) {
-
         baseDateDao.saveDateByNet(getTestData(stockCode));
+    }
+
+    /**
+     * 通过爬虫获取数据
+     * @param stockCode
+     * @return
+     */
+    private List<BaseStockData> getJsonpData(String stockCode) {
+        return new ArrayList<>();
     }
 
     private List<BaseStockData> getTestData(String stockCode) {
