@@ -6,11 +6,11 @@
 <!-- namespace命名空间，唯一特性 -->
 <mapper namespace="com.sunhao.stockprojecteg.dao.mapper.BaseDataMapper">
     <select id="getData" resultType="com.sunhao.stockprojecteg.model.BaseStockData">
-        select * from basedata
+        select * from stock_basedata
     </select>
     <!--[{"amplitude":"1","closePrice":"1.0","data":"1","highPrice":"1.0","lowPrice":"1.0","openPrice":"1.0","risePrice":"1.0","uuid":"1","volume":"1"}]-->
     <update id="saveDateByNet">
-        INSERT INTO basedata (data,openPrice, closePrice,risePrice,amplitude ,highPrice,lowPrice,volume,turnover,
+        INSERT INTO stock_basedata (data,openPrice, closePrice,risePrice,amplitude ,highPrice,lowPrice,volume,turnover,
         handTurnoverRate,code,country,codeName)
         VALUES
         <foreach collection="stockDataList" item="item" index="index" separator=",">
