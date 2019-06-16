@@ -7,5 +7,5 @@ import java.util.List;
 public interface BaseDataBussiess {
     List<BaseStockData> getData();
 
-    void saveDateByNet(String stockCode);
+    void saveDateByNet(List<String> stockCode);
 }

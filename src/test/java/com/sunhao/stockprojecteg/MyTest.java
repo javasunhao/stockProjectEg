@@ -1,12 +1,11 @@
 package com.sunhao.stockprojecteg;
 
+import com.sunhao.stockprojecteg.util.DataFromNetUtils;
 import com.sunhao.stockprojecteg.util.TimeChangeUtils;
 import org.junit.Test;
-import com.sunhao.stockprojecteg.util.DataFromNetUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class MyTest {
     //测试爬虫

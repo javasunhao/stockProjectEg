@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 public class DataFromNetUtils {
 
-    public List<BaseStockData> getCurrentMonthData(List<String> stockCodeList){
+    public static List<BaseStockData> getCurrentMonthData(List<String> stockCodeList){
         String resultStr = getStockJsonData(stockCodeList,TimeChangeUtils.getCurrentMonthFirstDate(),TimeChangeUtils.getCurrentDayDate());
         return getObjectByStr(resultStr);
     }
@@ -44,7 +44,8 @@ public class DataFromNetUtils {
      * @param str
      * @return
      */
-    public List<BaseStockData> getObjectByStr(String str) {
+    public static List<BaseStockData> getObjectByStr(String str) {
+        //TODO 兼容处理股票代码错误的情况
         List<OrginDataModel> orginDataModelList = JSON.parseArray(str, OrginDataModel.class);
         List<BaseStockData> dataList = new ArrayList<>();
         orginDataModelList.forEach(info -> {

@@ -3,9 +3,9 @@ package com.sunhao.stockprojecteg.bussiess.impl;
 import com.sunhao.stockprojecteg.dao.inf.BaseDateDao;
 import com.sunhao.stockprojecteg.model.BaseStockData;
 import com.sunhao.stockprojecteg.bussiess.inf.BaseDataBussiess;
+import com.sunhao.stockprojecteg.util.DataFromNetUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +21,9 @@ public class BaseDataBussiessImpl implements BaseDataBussiess {
     }
 
     @Override
-    public void saveDateByNet(String stockCode) {
-        baseDateDao.saveDateByNet(getTestData(stockCode));
+    public void saveDateByNet(List<String> stockCodeList) {
+        List<BaseStockData> baseStockDataList = DataFromNetUtils.getCurrentMonthData(stockCodeList);
+        baseDateDao.saveDateByNet(baseStockDataList);
     }
 
     /**
