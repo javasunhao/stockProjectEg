@@ -10,8 +10,13 @@
     </select>
     <!--[{"amplitude":"1","closePrice":"1.0","data":"1","highPrice":"1.0","lowPrice":"1.0","openPrice":"1.0","risePrice":"1.0","uuid":"1","volume":"1"}]-->
     <update id="saveDateByNet">
-        INSERT INTO basedata ( amplitude, closePrice,data ,highPrice,lowPrice,openPrice,risePrice,uuid,volume)
+        INSERT INTO basedata (data,openPrice, closePrice,risePrice,amplitude ,highPrice,lowPrice,volume,turnover,
+        handTurnoverRate,code,country,codeName)
         VALUES
-            ( 3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0,3.0);
+        <foreach collection="stockDataList" item="item" index="index" separator=",">
+            ( #{item.data},#{item.openPrice},#{item.closePrice},#{item.risePrice},#{item.amplitude},#{item.highPrice},
+             #{item.lowPrice},#{item.volume},#{item.turnover},#{item.handTurnoverRate},#{item.code},#{item.country},
+             #{item.codeName})
+        </foreach>
     </update>
 </mapper>

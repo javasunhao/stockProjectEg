@@ -21,13 +21,14 @@ public class BaseDataBussiessImpl implements BaseDataBussiess {
     }
 
     @Override
-    public void saveDateByNet(List<String> stockCodeList) {
-        List<BaseStockData> baseStockDataList = DataFromNetUtils.getCurrentMonthData(stockCodeList);
+    public void saveDateByNet(List<String> stockCodeList, String startTime, String codeName) {
+        List<BaseStockData> baseStockDataList = DataFromNetUtils.getDataToNowData(stockCodeList, startTime, codeName);
         baseDateDao.saveDateByNet(baseStockDataList);
     }
 
     /**
      * 通过爬虫获取数据
+     *
      * @param stockCode
      * @return
      */
@@ -47,7 +48,6 @@ public class BaseDataBussiessImpl implements BaseDataBussiess {
         stockData.setLowPrice("3");
         stockData.setOpenPrice("3");
         stockData.setRisePrice("3");
-        stockData.setUuid("3");
         stockData.setVolume("3");
         stockDataList.add(stockData);
         return stockDataList;

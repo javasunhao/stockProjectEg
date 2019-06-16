@@ -14,7 +14,9 @@
         $(document).ready(function(){
             var params = {};
             $("#updateData").click(function(){
-                params.stockCode = $("#stockCode").val()
+                params.stockCode = $("#stockCode").val();
+                params.startTime = $("#startTime").val();
+                params.codeName = $("#codeName").val();
                 $.get("/baseData/saveDateByNet",params,function(data,status){
                     alert("数据: " + data + "\n状态: " + status);
                 });
@@ -29,6 +31,8 @@
         <table class="select">
             <tr>
                 <td class="td">股票代码<input type="text" id="stockCode" name="stockCode" class="input"></td>
+                <td class="td">起始时间<input type="text" id="startTime" name="startTime" class="input"></td>
+                <td class="td">股票名称<input type="text" id="codeName" name="codeName" class="input"></td>
                 <td class="td"> <button id="updateData">更新数据库数据</button></td>
             </tr>
         </table>

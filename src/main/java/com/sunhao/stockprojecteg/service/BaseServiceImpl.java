@@ -24,11 +24,11 @@ public class BaseServiceImpl {
     }
 
     @RequestMapping("/saveDateByNet")
-    public String saveDateByNet(@RequestParam("stockCode") String stockCode) {
-        if (StringUtils.isNotEmpty(stockCode))
-        {
+    public String saveDateByNet(@RequestParam("stockCode") String stockCode, @RequestParam("startTime") String startTime,
+                                @RequestParam("codeName") String codeName) {
+        if (StringUtils.isNotEmpty(stockCode)) {
             List<String> stockCodeList = Arrays.asList(stockCode.split(","));
-            baseDataBussiess.saveDateByNet(stockCodeList);
+            baseDataBussiess.saveDateByNet(stockCodeList, startTime, codeName);
             return "saveDateByNet is ok";
         }
         return "saveDateByNet is fail";

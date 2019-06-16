@@ -2,7 +2,6 @@ package com.sunhao.stockprojecteg.model;
 
 public class BaseStockData {
     //日期，开盘，收盘，涨跌，涨幅，最低，最高，成交量，成交额，换手率
-    private String uuid;
     private String data;
     private String openPrice;
     private String closePrice;
@@ -12,6 +11,34 @@ public class BaseStockData {
     private String lowPrice;
     private String volume;//成交量
     private String turnover;//成交额
+    private String handTurnoverRate; //换手率
+    private String code;
+    private String country;
+    private String codeName;
+
+    public String getCodeName() {
+        return codeName;
+    }
+
+    public void setCodeName(String codeName) {
+        this.codeName = codeName;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 
     public String getData() {
         return data;
@@ -85,11 +112,11 @@ public class BaseStockData {
         this.turnover = turnover;
     }
 
-    public String getUuid() {
-        return uuid;
+    public String getHandTurnoverRate() {
+        return handTurnoverRate;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setHandTurnoverRate(String handTurnoverRate) {
+        this.handTurnoverRate = handTurnoverRate;
     }
 }
