@@ -10,4 +10,6 @@ public interface BaseDataBussiess {
     void saveDateByNet(List<String> stockCode, String startTime, String codeName);
 
     void saveBaseData();
+
+    void saveIndexBasicData();
 }

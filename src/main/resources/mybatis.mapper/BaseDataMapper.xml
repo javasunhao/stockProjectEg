@@ -22,13 +22,24 @@
 
     <update id="saveBaseData">
         INSERT INTO
-          stock_list (ts_code,symbol,name,area,industry,fullname,enname,market,exchange,curr_type,list_status,list_date
+          stock_list (ts_code,symbol,`name`,area,industry,fullname,enname,market,exchange,curr_type,list_status,list_date
           ,delist_date,is_hs)
         VALUES
         <foreach collection="stockBaseInfoList" item="item" separator=",">
             (#{item.tsCode},#{item.symbol},#{item.name},#{item.area},#{item.industry},#{item.fullname},#{item.enname},
             #{item.market},#{item.exchange},#{item.currType},#{item.listStatus},#{item.listDate},#{item.delistDate},
              #{item.isHs})
+        </foreach>
+    </update>
+
+    <update id="saveIndexBasicData">
+        INSERT INTO
+        index_basic (ts_code,`name`,fullname,market,publisher,index_type,category,base_date,base_point,list_date,weight_rule,
+                    `desc`,exp_date)
+        VALUES
+        <foreach collection="indexBasicList" item="item" separator=",">
+            (#{item.tsCode},#{item.name},#{item.fullname},#{item.market},#{item.publisher},#{item.indexType},#{item.category},
+            #{item.baseDate},#{item.basePoint},#{item.listDate},#{item.weightRule},#{item.desc},#{item.expDate})
         </foreach>
     </update>
 

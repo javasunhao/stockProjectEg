@@ -40,4 +40,9 @@ public class BaseServiceImpl {
         return "saveBaseData is OK";
     }
 
+    @RequestMapping("/saveIndexBasicData")
+    public String saveIndexBasicData(){
+        baseDataBussiess.saveIndexBasicData();
+        return "saveIndexBasicData is OK";
+    }
 }

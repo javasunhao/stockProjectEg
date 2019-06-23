@@ -1,6 +1,7 @@
 package com.sunhao.stockprojecteg.dao.mapper;
 
 import com.sunhao.stockprojecteg.model.BaseStockData;
+import com.sunhao.stockprojecteg.model.IndexBasicModel;
 import com.sunhao.stockprojecteg.model.StockBaseInfo;
 import org.apache.ibatis.annotations.Param;
 
@@ -12,5 +13,7 @@ public interface BaseDataMapper {
 
     void saveDateByNet(@Param("stockDataList") List<BaseStockData> stockDataList);
 
-    void saveBaseData(@Param("stockBaseInfoList")List<StockBaseInfo> stockBaseInfoList);
+    void saveBaseData(@Param("stockBaseInfoList") List<StockBaseInfo> stockBaseInfoList);
+
+    void saveIndexBasicData(@Param("indexBasicList") List<IndexBasicModel> indexBasicModelList);
 }

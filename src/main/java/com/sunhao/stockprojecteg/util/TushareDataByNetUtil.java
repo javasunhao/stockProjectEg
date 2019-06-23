@@ -71,7 +71,12 @@ public class TushareDataByNetUtil {
     }
 
     public static List<IndexBasicModel> getIndexBasicList(){
-        return praseIndexBasicStr(getTushareDataByNet(INDEX_BASIC_POST_PARAMS));
+        List<IndexBasicModel> indexBasicModelList = praseIndexBasicStr(getTushareDataByNet(INDEX_BASIC_POST_PARAMS));
+        Map<String, String> changeParams = new HashMap<>();
+        changeParams.put("market", "SZSE");
+        INDEX_BASIC_POST_PARAMS.put("params", changeParams);
+        indexBasicModelList.addAll(praseIndexBasicStr(getTushareDataByNet(INDEX_BASIC_POST_PARAMS)));
+        return indexBasicModelList;
     }
 
     private static List<IndexBasicModel> praseIndexBasicStr(String str){
