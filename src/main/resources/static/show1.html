@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="css/test1.css"/>
     <!-- 引入 echarts.js -->
     <script type="text/javascript" src="js/echarts-all.js"></script>
-
     <!-- 引入 jquery.js -->
     <script type="text/javascript" src="js/jquery-3.4.1.js.js"></script>
     <script >
@@ -37,7 +36,7 @@
                 <td class="td"> <button id="updateData">更新数据库数据</button></td>
             </tr>
             <tr>
-                <td class="td"> <button id="refreshData">刷新数据</button></td>
+                <td class="td"> <button id="updateStockListData">更新数据库表stock_list</button></td>
             </tr>
         </table>
     </div>
@@ -80,12 +79,8 @@
         var downBorderColor = '#008F28';
 
         $(document).ready(function(){
-            var params = {};
-            $("#refreshData").click(function(){
-                params.stockCode = $("#stockCode").val();
-                params.startTime = $("#startTime").val();
-                params.codeName = $("#codeName").val();
-                $.get("/baseData/getRefreshData",params,function(data,status){
+            $("#updateStockListData").click(function(){
+                $.get("/baseData/saveBaseData",function(data,status){
                     alert("数据: " + data + "\n状态: " + status);
                 });
             });

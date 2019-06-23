@@ -34,4 +34,10 @@ public class BaseServiceImpl {
         return "saveDateByNet is fail";
     }
 
+    @RequestMapping("/saveBaseData")
+    public String saveBaseData(){
+        baseDataBussiess.saveBaseData();
+        return "saveBaseData is OK";
+    }
+
 }

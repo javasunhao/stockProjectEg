@@ -1,6 +1,6 @@
 server:
   port: 8070
-
+# 中文
 spring:
  datasource:
    driver-class-name: com.mysql.cj.jdbc.Driver
