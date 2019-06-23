@@ -2,7 +2,7 @@ package com.sunhao.stockprojecteg;
 
 import com.alibaba.fastjson.JSON;
 import com.sunhao.stockprojecteg.model.IndexBasicModel;
-import com.sunhao.stockprojecteg.model.StockBaseInfo;
+import com.sunhao.stockprojecteg.model.IndexWeightModel;
 import com.sunhao.stockprojecteg.util.DataFromNetUtils;
 import com.sunhao.stockprojecteg.util.TushareDataByNetUtil;
 import org.junit.Test;
@@ -31,15 +31,12 @@ public class MyTest {
 
     @Test
     public void test02() {
-        List<StockBaseInfo> aa = TushareDataByNetUtil.getStockList();
+        List<IndexWeightModel> aa = TushareDataByNetUtil.getIndexWeightData();
         System.out.println(JSON.toJSON(aa));
-
     }
 
     @Test
     public void test03() {
-
-        System.out.println("\u6982\u8981:\u4e2d\u56fd\u6218\u7565\u65b0\u5174\u4ea7\u4e1a\u6210\u4efd\u6307\u6570\u9009\u53d6\u8282\u80fd\u73af\u4fdd\u3001\u65b0\u4e00\u4ee3\u4fe1\u606f\u6280\u672f\u4ea7\u4e1a\u3001\u751f\u7269\u4ea7\u4e1a\u3001\u9ad8\u7aef\u88c5\u5907\u5236\u9020\u3001\u65b0\u80fd\u6e90\u4ea7\u4e1a\u3001\u65b0\u6750\u6599\u4ea7\u4e1a\u3001\u65b0\u80fd\u6e90\u6c7d\u8f66\u3001\u6570\u5b57\u521b\u610f\u4ea7\u4e1a\u3001\u9ad8\u6280\u672f\u670d\u52a1\u4e1a\u7b49\u9886\u57df\u5177\u6709\u4ee3\u8868\u6027\u7684100\u5bb6\u4e0a\u5e02\u516c\u53f8\uff0c\u91c7\u7528\u81ea\u7531\u6d41\u901a\u80a1\u672c\u52a0\u6743\u65b9\u5f0f\uff0c\u4ee5\u53cd\u6620\u4e2d\u56fd\u6218\u7565\u65b0\u5174\u4ea7\u4e1a\u4e0a\u5e02\u516c\u53f8\u7684\u8d70\u52bf\u3002");
-
+        System.out.println("\u53c2\u6570index_code\u4e0d\u53ef\u7f3a\u5c11");
     }
 }

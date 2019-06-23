@@ -43,4 +43,12 @@
         </foreach>
     </update>
 
+    <update id="saveIndexWeightData">
+        INSERT INTO
+        index_weight (index_code,con_code,trade_date,weight)
+        VALUES
+        <foreach collection="indexWeightList" item="item" separator=",">
+            (#{item.indexCode},#{item.conCode},#{item.tradeDate},#{item.weight})
+        </foreach>
+    </update>
 </mapper>

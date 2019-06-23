@@ -4,6 +4,7 @@ import com.sunhao.stockprojecteg.bussiess.inf.BaseDataBussiess;
 import com.sunhao.stockprojecteg.dao.inf.BaseDataDao;
 import com.sunhao.stockprojecteg.model.BaseStockData;
 import com.sunhao.stockprojecteg.model.IndexBasicModel;
+import com.sunhao.stockprojecteg.model.IndexWeightModel;
 import com.sunhao.stockprojecteg.model.StockBaseInfo;
 import com.sunhao.stockprojecteg.util.DataFromNetUtils;
 import com.sunhao.stockprojecteg.util.TushareDataByNetUtil;
@@ -35,7 +36,13 @@ public class BaseDataBussiessImpl implements BaseDataBussiess {
 
     @Override
     public void saveIndexBasicData() {
-        List<IndexBasicModel> indexBasicModelList =TushareDataByNetUtil.getIndexBasicList();
+        List<IndexBasicModel> indexBasicModelList = TushareDataByNetUtil.getIndexBasicList();
         baseDataDao.saveIndexBasicData(indexBasicModelList);
+    }
+
+    @Override
+    public void saveIndexWeightData() {
+        List<IndexWeightModel> indexWeightModelList = TushareDataByNetUtil.getIndexWeightData();
+        baseDataDao.saveIndexWeightData(indexWeightModelList);
     }
 }

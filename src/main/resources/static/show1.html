@@ -38,6 +38,7 @@
             <tr>
                 <td class="td"> <button id="updateStockListData">更新数据库表stock_list</button></td>
                 <td class="td"> <button id="updateIndexBasicData">更新数据库表index_basic</button></td>
+                <td class="td"> <button id="updateIndexWeightData">更新数据库表index_weight</button></td>
             </tr>
         </table>
     </div>
@@ -82,6 +83,12 @@
         $(document).ready(function(){
             $("#updateStockListData").click(function(){
                 $.get("/baseData/saveBaseData",function(data,status){
+                    alert("数据: " + data + "\n状态: " + status);
+                });
+            });
+
+            $("#updateIndexWeightData").click(function(){
+                $.get("/baseData/saveIndexWeightData",function(data,status){
                     alert("数据: " + data + "\n状态: " + status);
                 });
             });

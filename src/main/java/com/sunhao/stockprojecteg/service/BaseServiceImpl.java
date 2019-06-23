@@ -45,4 +45,10 @@ public class BaseServiceImpl {
         baseDataBussiess.saveIndexBasicData();
         return "saveIndexBasicData is OK";
     }
+
+    @RequestMapping("/saveIndexWeightData")
+    public String saveIndexWeightData(){
+        baseDataBussiess.saveIndexWeightData();
+        return "saveIndexWeightData is OK";
+    }
 }

@@ -12,4 +12,6 @@ public interface BaseDataBussiess {
     void saveBaseData();
 
     void saveIndexBasicData();
+
+    void saveIndexWeightData();
 }

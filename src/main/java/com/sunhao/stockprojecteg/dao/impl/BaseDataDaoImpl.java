@@ -5,6 +5,7 @@ import com.sunhao.stockprojecteg.dao.inf.BaseDataDao;
 import com.sunhao.stockprojecteg.dao.mapper.BaseDataMapper;
 import com.sunhao.stockprojecteg.model.BaseStockData;
 import com.sunhao.stockprojecteg.model.IndexBasicModel;
+import com.sunhao.stockprojecteg.model.IndexWeightModel;
 import com.sunhao.stockprojecteg.model.StockBaseInfo;
 import com.sunhao.stockprojecteg.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,13 @@ public class BaseDataDaoImpl implements BaseDataDao {
     public void saveIndexBasicData(List<IndexBasicModel> indexBasicModelList) {
         CollectionUtils.split(indexBasicModelList, Constant.SPLIT_CONSTANT).forEach(list ->{
             baseDataMapper.saveIndexBasicData(list);
+        });
+    }
+
+    @Override
+    public void saveIndexWeightData(List<IndexWeightModel> indexWeightModelList) {
+        CollectionUtils.split(indexWeightModelList, Constant.SPLIT_CONSTANT).forEach(list ->{
+            baseDataMapper.saveIndexWeightData(list);
         });
     }
 }
